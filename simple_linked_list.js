@@ -3,8 +3,8 @@ function Node(element) {
   this.next = null;
 }
 
-function LinkedList(node) {
-  this.head = node;
+function LinkedList(element) {
+  this.head = new Node(element);
   this.find = find;
   this.findPrevious = findPrevious;
   this.insert = insert;
@@ -14,7 +14,7 @@ function LinkedList(node) {
 
 function find(item) {
   let currentNode = this.head;
-  while (currentNode !== item) {
+  while (currentNode.element !== item) {
     if (!currentNode.next) {
       break;
     } else {
@@ -34,15 +34,16 @@ function findPrevious(item) {
 }
 
 function insert(newItem, item) {
+  const newNode = new Node(newItem);
   const current = this.find(item);
-  newItem.next = current.next;
-  current.next = newItem;
+  newNode.next = current.next;
+  current.next = newNode;
 }
 
 function remove(item) {
   let node = this.findPrevious(item);
   if (node.next !== null) {
-    node.next = item.next.next;
+    node.next = node.next.next;
   }
 }
 
@@ -59,18 +60,13 @@ function display() {
   }
 }
 
-const n1 = new Node(1);
-const n2 = new Node(2);
-const n3 = new Node(3);
-const n4 = new Node(4);
-const n5 = new Node(5);
-const LList = new LinkedList(n1);
-LList.insert(n2);
-LList.insert(n3);
-LList.insert(n4);
+const LList = new LinkedList(1);
+LList.insert(2);
+LList.insert(3);
+LList.insert(4);
 LList.display();
-console.log("find n3", LList.find(n3));
-LList.remove(n5);
+console.log("find n3", LList.find(3));
+LList.remove(5);
 LList.display();
-LList.remove(n4);
+LList.remove(4);
 LList.display();
