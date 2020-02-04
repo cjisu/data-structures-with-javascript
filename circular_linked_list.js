@@ -42,7 +42,7 @@ function insert(newItem, item) {
 }
 
 function remove(item) {
-  let node = this.findPrevious(item);
+  const node = this.findPrevious(item);
   if (node.next !== this.head) {
     node.next = node.next.next;
   }

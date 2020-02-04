@@ -33,7 +33,7 @@ function insert(newItem, item) {
 }
 
 function remove(item) {
-  let node = this.find(item);
+  const node = this.find(item);
   if (node.next !== null) {
     node.previous.next = node.next;
     node.next.previous = node.previous;
