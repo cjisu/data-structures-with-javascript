@@ -40,18 +40,20 @@ function toString() {
   });
 }
 
-const queue = new Queue();
-console.log("is empty queue", queue.isEmpty());
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
-queue.enqueue(4);
-console.log("queue front", queue.front());
-console.log("queue back", queue.back());
-console.log("current queue");
-queue.toString();
-queue.dequeue();
-queue.dequeue();
-queue.dequeue();
-console.log("current queue");
-queue.toString();
+// const queue = new Queue();
+// console.log("is empty queue", queue.isEmpty());
+// queue.enqueue(1);
+// queue.enqueue(2);
+// queue.enqueue(3);
+// queue.enqueue(4);
+// console.log("queue front", queue.front());
+// console.log("queue back", queue.back());
+// console.log("current queue");
+// queue.toString();
+// queue.dequeue();
+// queue.dequeue();
+// queue.dequeue();
+// console.log("current queue");
+// queue.toString();
+
+exports.Queue = Queue;
