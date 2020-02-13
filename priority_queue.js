@@ -25,7 +25,9 @@ function dequeue() {
         entry = i;
       }
     }
-    return this.dataStore.splice(entry, 1);
+    const q = this.dataStore[entry];
+    this.dataStore.splice(entry, 1);
+    return q;
   }
 }
 
@@ -55,28 +57,31 @@ function toString() {
   });
 }
 
-const queue = new PriorityQueue();
-const qe1 = new PriorityQueueNode(1, 4);
-const qe2 = new PriorityQueueNode(2, 2);
-const qe3 = new PriorityQueueNode(3, 3);
-const qe4 = new PriorityQueueNode(4, 1);
-queue.enqueue(qe1);
-queue.enqueue(qe2);
-queue.enqueue(qe3);
-queue.enqueue(qe4);
-console.log("queue front", queue.front());
-console.log("queue back", queue.back());
-console.log("current queue");
-queue.toString();
-queue.dequeue();
-console.log("current queue");
-queue.toString();
-queue.dequeue();
-console.log("current queue");
-queue.toString();
-queue.dequeue();
-console.log("current queue");
-queue.toString();
-queue.dequeue();
-console.log("current queue");
-queue.toString();
+// const queue = new PriorityQueue();
+// const qe1 = new PriorityQueueNode(1, 4);
+// const qe2 = new PriorityQueueNode(2, 2);
+// const qe3 = new PriorityQueueNode(3, 3);
+// const qe4 = new PriorityQueueNode(4, 1);
+// queue.enqueue(qe1);
+// queue.enqueue(qe2);
+// queue.enqueue(qe3);
+// queue.enqueue(qe4);
+// console.log("queue front", queue.front());
+// console.log("queue back", queue.back());
+// console.log("current queue");
+// queue.toString();
+// queue.dequeue();
+// console.log("current queue");
+// queue.toString();
+// queue.dequeue();
+// console.log("current queue");
+// queue.toString();
+// queue.dequeue();
+// console.log("current queue");
+// queue.toString();
+// queue.dequeue();
+// console.log("current queue");
+// queue.toString();
+
+exports.PriorityQueue = PriorityQueue;
+exports.PriorityQueueNode = PriorityQueueNode;
